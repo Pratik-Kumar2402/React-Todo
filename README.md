@@ -1,54 +1,85 @@
 # React-Todo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal, modern Todo app built with React 19, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This workspace provides a simple yet robust starting point for React development with TypeScript and Vite. It features:
 
-## Expanding the ESLint configuration
+- **React 19** for building interactive UIs
+- **TypeScript** for static type checking
+- **Vite** for fast development and optimized builds
+- **ESLint** with recommended rules for JavaScript, TypeScript, and React
+- **LocalStorage** persistence for todos
+- **Responsive and modern UI** (see [`src/App.css`](src/App.css))
+- **Background image** support (see [`public/a-bunch-of-light-bulbs-hanging-from-a-string-of-lights.jpg`](public/a-bunch-of-light-bulbs-hanging-from-a-string-of-lights.jpg))
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Folder Structure
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```plaintext
+react-todo
+├── public
+│   ├── a-bunch-of-light-bulbs-hanging-from-a-string-of-lights.jpg
+│   └── vite.svg
+└── src
+    ├── App.css
+    ├── App.tsx
+    ├── assets
+    │   └── vite.svg
+    ├── components
+    │   ├── Footer.tsx
+    │   └── Header.tsx
+    ├── hooks
+    │   └── useTodos.ts
+    ├── interfaces
+    │   └── Todo.ts
+    ├── pages
+    │   └── Home.tsx
+    └── utils
+        └── localStorage.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **`public/`**: Static assets like images and icons.
+- **`src/`**: Source code for the application.
+  - **`assets/`**: Asset files such as images and fonts.
+  - **`components/`**: Reusable React components.
+  - **`hooks/`**: Custom React hooks.
+  - **`interfaces/`**: TypeScript interfaces for type checking.
+  - **`pages/`**: Page components for routing.
+  - **`utils/`**: Utility functions and modules.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Getting Started
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+To get started with this template, you can use the following commands:
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/react-todo.git
+
+# Navigate into the project directory
+cd react-todo
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
 ```
+
+## Building for Production
+
+To build the app for production, use the following command:
+
+```bash
+npm run build
+```
+
+This will create an optimized build of your app in the `dist` directory.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+> **Note**: This template is intended to provide a starting point for building React applications with TypeScript and Vite. You can customize it according to your project requirements.
