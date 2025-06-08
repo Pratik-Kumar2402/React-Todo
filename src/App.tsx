@@ -45,8 +45,8 @@ export default function App() {
 
   return (
     <>
-      <body>
-        <form className="new-item-form" onSubmit={handleSubmit}>
+      <div className='App'>
+        <form className="new-item-form" onSubmit={(e) => handleSubmit(e)}>
           <label htmlFor="item">New Item</label>
           <div className="form-row">
             <input
@@ -78,7 +78,7 @@ export default function App() {
             ))}
           </ul>
         </form>
-      </body>
+      </div>
     </>
   )
 }
